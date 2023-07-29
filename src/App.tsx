@@ -5,11 +5,9 @@ import { useState } from 'react';
 import { GlobalStyles } from './assets/styles/globalStyles.ts';
 
 const AppWrapper = styled.div`
+  min-height: 100vh;
+  transition: all 0.30s ease;
   background-color: ${(props) => props.theme.bgPrimary};
-`
-
-const H1 = styled.h1`
-    color: ${(props) => props.theme.textPrimary}}
 `
 
 const App = () => {
@@ -25,7 +23,6 @@ const App = () => {
       <GlobalStyles />
       <AppWrapper>
         <input type="checkbox" onClick={toggleTheme} />
-        <H1>Hello world</H1>
       </AppWrapper>
     </ThemeProvider>
   )
