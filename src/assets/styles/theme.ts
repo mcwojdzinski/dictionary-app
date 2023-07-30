@@ -5,8 +5,9 @@ export const darkTheme = {
   textSecondary: '#757575',
   accentColorPrimary: '#8f19e8',
   accentColorSecondary: '#a445ed',
-  warning: '#ff5252'
-}
+  warning: '#ff5252',
+  switchBg: '#8f19e8',
+};
 
 export const lightTheme = {
   bgPrimary: '#ffffff',
@@ -15,5 +16,6 @@ export const lightTheme = {
   textSecondary: '#757575',
   accentColorPrimary: '#8f19e8',
   accentColorSecondary: '#a445ed',
-  warning: '#ff5252'
-}
+  warning: '#ff5252',
+  switchBg: '#757575',
+};
