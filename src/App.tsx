@@ -1,9 +1,12 @@
 import './App.css';
+import { GlobalStyles } from './assets/styles/globalStyles.ts';
 import styled, { ThemeProvider } from 'styled-components';
 import { lightTheme, darkTheme } from './assets/styles/theme.ts';
-import { useState } from 'react';
-import { GlobalStyles } from './assets/styles/globalStyles.ts';
+
+import { useEffect, useState } from 'react';
+
 import Header from './components/Header/Header.tsx';
+import SearchBar from './components/SearchBar/SearchBar.tsx';
 
 const AppWrapper = styled.div`
   min-height: 100vh;
@@ -29,8 +32,27 @@ const MainWrapper = styled.div`
 `;
 
 const App = () => {
-  const [theme, setTheme] = useState<string>('light');
+  const userPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  const [theme, setTheme] = useState<string>(userPrefersDark ? 'dark' : 'light');
   const isDarkTheme: boolean = theme === 'dark';
+  const [searchValue, setSearchValue] = useState<string>('');
+
+  useEffect(() => {
+    const handleColorSchemeChange = (e: MediaQueryListEvent) => {
+      setTheme(e.matches ? 'dark' : 'light');
+    };
+
+    const colorSchemeListener = window.matchMedia('(prefers-color-scheme: dark)');
+    colorSchemeListener.addEventListener('change', handleColorSchemeChange);
+
+    return () => {
+      colorSchemeListener.removeEventListener('change', handleColorSchemeChange);
+    };
+  }, []);
+
+  const handleSearchChange = (newState: string) => {
+    setSearchValue(newState);
+  };
 
   const toggleTheme = () => {
     setTheme(isDarkTheme ? 'light' : 'dark');
@@ -41,8 +63,8 @@ const App = () => {
       <GlobalStyles />
       <AppWrapper>
         <MainWrapper>
-          <Header toggleTheme={toggleTheme} />
-          <h1>Check</h1>
+          <Header toggleTheme={toggleTheme} theme={theme} />
+          <SearchBar searchValue={searchValue} setSearchValue={handleSearchChange} />
         </MainWrapper>
       </AppWrapper>
     </ThemeProvider>

@@ -23,6 +23,7 @@ export const SelectLabelButton = styled.button`
 
 export const DropdownStyle = styled.div<{ isVisible: boolean }>`
   position: absolute;
+  z-index: 999;
   top: 50px;
   left: 0;
   min-width: 10rem;
@@ -47,8 +48,8 @@ export const DropdownItem = styled.div<{ active: boolean }>`
   font-size: 0.9rem;
   border-radius: 0.3rem;
   cursor: pointer;
-  color: ${(props) => (props.active ? props.theme.accentColorPrimary : '#fff')};
-  font-weight: ${(props) => (props.active ? 500 : 400)};
+  color: ${(props) => (props.active ? props.theme.textPrimary : '#2d2d2d')};
+  font-weight: ${(props) => (props.active ? 700 : 500)};
 
   &:hover,
   :focus,

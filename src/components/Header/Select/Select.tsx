@@ -6,7 +6,7 @@ import {
   SelectIconWrapper,
   SelectLabelButton,
 } from './Select.styles.tsx';
-import IconArrowDown from '../Icons/IconArrowDown.tsx';
+import IconArrowDown from '../../Icons/IconArrowDown.tsx';
 
 const Select = () => {
   const [open, setOpen] = useState<boolean>(false);

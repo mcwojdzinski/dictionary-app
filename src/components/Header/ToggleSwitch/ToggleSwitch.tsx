@@ -1,10 +1,13 @@
 import { Input, Label, Switch } from './ToggleSwitch.styles.tsx';
-import { useState } from 'react';
-import IconMoon from '../Icons/IconMoon.tsx';
+import { useEffect, useState } from 'react';
+import IconMoon from '../../Icons/IconMoon.tsx';
 
-const ToggleSwitch = ({ toggleTheme }: { toggleTheme: () => unknown }) => {
+const ToggleSwitch = ({ toggleTheme, theme }: { toggleTheme: () => unknown; theme: string }) => {
   const [checked, setChecked] = useState(false);
 
+  useEffect(() => {
+    theme === 'dark' ? setChecked(true) : null;
+  }, [theme]);
   const changeTheme = () => {
     toggleTheme();
     setChecked(!checked);
