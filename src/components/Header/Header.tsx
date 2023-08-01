@@ -1,16 +1,18 @@
 import IconLogo from '../Icons/IconLogo.tsx';
 
-import { HeaderWrapper } from './Header.styles.tsx';
+import { HeaderDivider, HeaderSettings, HeaderWrapper } from './Header.styles.tsx';
 import ToggleSwitch from '../ToggleSwitch/ToggleSwitch.tsx';
+import Select from '../Select/Select.tsx';
 
 const Header = ({ toggleTheme }: { toggleTheme: () => unknown }) => {
   return (
     <HeaderWrapper>
       <IconLogo />
-      <select>
-        <option>XD</option>
-      </select>
-      <ToggleSwitch toggleTheme={toggleTheme} />
+      <HeaderSettings>
+        <Select />
+        <HeaderDivider />
+        <ToggleSwitch toggleTheme={toggleTheme} />
+      </HeaderSettings>
     </HeaderWrapper>
   );
 };

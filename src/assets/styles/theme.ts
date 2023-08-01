@@ -7,6 +7,7 @@ export const darkTheme = {
   accentColorSecondary: '#a445ed',
   warning: '#ff5252',
   switchBg: '#8f19e8',
+  divider: '#e9e9e9',
 };
 
 export const lightTheme = {
@@ -18,4 +19,5 @@ export const lightTheme = {
   accentColorSecondary: '#a445ed',
   warning: '#ff5252',
   switchBg: '#757575',
+  divider: '#e9e9e9',
 };

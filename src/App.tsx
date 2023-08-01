@@ -12,10 +12,20 @@ const AppWrapper = styled.div`
   display: flex;
   justify-items: center;
   justify-content: center;
+  padding-top: 20px;
+
+  @media (min-width: 768px) {
+    padding-top: 58px;
+  }
 `;
 
 const MainWrapper = styled.div`
-  max-width: 768px;
+  width: 100%;
+  padding: 0px 15px;
+
+  @media (min-width: 768px) {
+    width: 768px;
+  }
 `;
 
 const App = () => {
@@ -32,6 +42,7 @@ const App = () => {
       <AppWrapper>
         <MainWrapper>
           <Header toggleTheme={toggleTheme} />
+          <h1>Check</h1>
         </MainWrapper>
       </AppWrapper>
     </ThemeProvider>

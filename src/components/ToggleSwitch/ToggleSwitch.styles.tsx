@@ -16,6 +16,10 @@ export const Switch = styled.div`
   padding: 4px;
   transition: 300ms all;
 
+  &:hover {
+    background: ${(props) => props.theme.switchBg};
+  }
+
   &:before {
     transition: 300ms all;
     content: '';
