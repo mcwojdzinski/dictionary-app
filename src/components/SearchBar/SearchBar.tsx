@@ -7,6 +7,7 @@ const SearchBar = ({
   setSearchValue,
 }: {
   searchValue: string;
+  // eslint-disable-next-line no-unused-vars
   setSearchValue: (value: string) => unknown;
 }) => {
   const [isInputEmpty, setIsInputEmpty] = useState<boolean>(false);
