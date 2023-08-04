@@ -7,6 +7,7 @@ import { useEffect, useState } from 'react';
 
 import Header from './components/Header/Header.tsx';
 import SearchBar from './components/SearchBar/SearchBar.tsx';
+import axios from 'axios';
 
 const AppWrapper = styled.div`
   min-height: 100vh;
@@ -36,6 +37,7 @@ const App = () => {
   const [theme, setTheme] = useState<string>(userPrefersDark ? 'dark' : 'light');
   const isDarkTheme: boolean = theme === 'dark';
   const [searchValue, setSearchValue] = useState<string>('');
+  const [response, setResponse] = useState({});
 
   useEffect(() => {
     const handleColorSchemeChange = (e: MediaQueryListEvent) => {
@@ -50,12 +52,17 @@ const App = () => {
     };
   }, []);
 
-  const handleSearchChange = (newState: string) => {
-    setSearchValue(newState);
-  };
-
   const toggleTheme = () => {
     setTheme(isDarkTheme ? 'light' : 'dark');
+  };
+
+  const getResponse = async (value: string) => {
+    try {
+      const response = await axios.get(`https://api.dictionaryapi.dev/api/v2/entries/en/${value}`);
+      setResponse(response);
+    } catch (err) {
+      setResponse({ title: 'none' });
+    }
   };
 
   return (
@@ -64,7 +71,8 @@ const App = () => {
       <AppWrapper>
         <MainWrapper>
           <Header toggleTheme={toggleTheme} theme={theme} />
-          <SearchBar searchValue={searchValue} setSearchValue={handleSearchChange} />
+          <SearchBar searchValue={searchValue} setSearchValue={setSearchValue} getResponse={getResponse} />
+          <h1>{JSON.stringify(response)}</h1>
         </MainWrapper>
       </AppWrapper>
     </ThemeProvider>
