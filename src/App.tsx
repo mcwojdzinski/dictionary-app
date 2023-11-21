@@ -3,7 +3,7 @@ import { GlobalStyles } from './assets/styles/globalStyles.ts';
 import styled, { ThemeProvider } from 'styled-components';
 import { lightTheme, darkTheme } from './assets/styles/theme.ts';
 
-import { useEffect, useState } from 'react';
+import { Suspense, useEffect, useState } from 'react';
 
 import Header from './components/Header/Header.tsx';
 import SearchBar from './components/SearchBar/SearchBar.tsx';
@@ -86,7 +86,9 @@ const App = () => {
           <Header toggleTheme={toggleTheme} theme={theme} />
           <SearchBar searchValue={searchValue} setSearchValue={setSearchValue} getResponse={getResponse} />
           {response !== null || response !== undefined ? (
-            <WordContent response={response} responseError={responseError} responseErrorBody={response} />
+            <Suspense>
+              <WordContent response={response} responseError={responseError} responseErrorBody={response} />
+            </Suspense>
           ) : null}
         </StyledMainWrapper>
       </StyledAppWrapper>

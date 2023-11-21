@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const SearchWrapper = styled.div`
   margin: 25px 0;
-  width: 768px;
+  max-width: 768px;
   height: 64px;
   display: flex;
   flex-direction: column;

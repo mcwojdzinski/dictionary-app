@@ -3,6 +3,7 @@ export type WordContentInterface = {
   word: string;
   phonetics?: Phonetic[];
   phonetic?: string;
+  synonyms?:string[];
   meanings: Meaning[];
   license: License2;
   sourceUrls: string[];

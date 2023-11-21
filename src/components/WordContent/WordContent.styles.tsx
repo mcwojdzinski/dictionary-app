@@ -50,3 +50,5 @@ export const StyledWordContentDivider = styled.div`
     background-color: #3a3a3a;
   }
 `;
+
+export const StyledWordContentSource = styled.p``;
