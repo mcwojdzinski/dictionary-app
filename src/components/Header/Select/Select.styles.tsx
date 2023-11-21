@@ -48,7 +48,7 @@ export const DropdownItem = styled.div<{ active: boolean }>`
   font-size: 0.9rem;
   border-radius: 0.3rem;
   cursor: pointer;
-  color: ${(props) => (props.active ? props.theme.textPrimary : '#2d2d2d')};
+  color: ${(props) => props.theme.textPrimary};
   font-weight: ${(props) => (props.active ? 700 : 500)};
 
   &:hover,
