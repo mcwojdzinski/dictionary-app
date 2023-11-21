@@ -23,7 +23,7 @@
     "no-unused-vars": [
       "error",
       {
-        "vars": "all",
+        "vars": "0",
         "args": "after-used",
         "ignoreRestSiblings": true,
         "argsIgnorePattern": "^_"

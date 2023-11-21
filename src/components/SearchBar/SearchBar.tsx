@@ -8,17 +8,19 @@ const SearchBar = ({
   getResponse,
 }: {
   searchValue: string;
-  // eslint-disable-next-line no-unused-vars
   setSearchValue: (value: string) => unknown;
   getResponse: (value: string) => unknown;
 }) => {
   const [isInputEmpty, setIsInputEmpty] = useState<boolean>(false);
   const handleInputChange = async (event: React.KeyboardEvent<HTMLInputElement>) => {
+    setIsInputEmpty(false);
     if (event.key === 'Enter' && event.currentTarget.value !== '') {
       setSearchValue(event.currentTarget.value);
       getResponse(event.currentTarget.value);
     }
-    setIsInputEmpty(event.currentTarget.value === '');
+    if (event.key === 'Enter' && event.currentTarget.value === '') {
+      setIsInputEmpty(event.currentTarget.value === '');
+    }
   };
 
   return (
