@@ -6,7 +6,7 @@ const ToggleSwitch = ({ toggleTheme, theme }: { toggleTheme: () => unknown; them
   const [checked, setChecked] = useState(false);
 
   useEffect(() => {
-    theme === 'dark' ? setChecked(true) : null;
+    theme === 'dark' ? setChecked(true) : setChecked(false);
   }, [theme]);
   const changeTheme = () => {
     toggleTheme();
@@ -17,7 +17,7 @@ const ToggleSwitch = ({ toggleTheme, theme }: { toggleTheme: () => unknown; them
     <Label>
       <Input checked={checked} type="checkbox" onChange={changeTheme} />
       <Switch />
-      <IconMoon />
+      <IconMoon isChecked={checked} />
     </Label>
   );
 };
