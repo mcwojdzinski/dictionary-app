@@ -13,7 +13,7 @@ export type Phonetic ={
   audio: string;
   sourceUrl?: string;
   license?: License;
-  text?: string;
+  text: string;
 }
 
 export type License =  {

@@ -34,7 +34,6 @@ export const DropdownStyle = styled.div<{ isVisible: boolean }>`
   box-shadow: 0px 5px 30px 0px ${(props) => props.theme.accentColorPrimary};
   background: ${(props) => props.theme.bgSecondary};
   transition: max-height 0.2s ease;
-  overflow: scroll;
   max-height: ${(props) => (props.isVisible ? '40vmax' : '40px')};
   visibility: ${(props) => (props.isVisible ? 'visible' : 'hidden')};
 `;

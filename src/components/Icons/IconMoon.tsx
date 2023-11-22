@@ -1,9 +1,9 @@
-const IconMoon = () => {
+const IconMoon = ({ isChecked }: { isChecked: boolean }) => {
   return (
     <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22">
       <path
         fill="none"
-        stroke="#838383"
+        stroke={isChecked ? '#A445ED' : '#838383'}
         strokeLinecap="round"
         strokeLinejoin="round"
         strokeWidth="1.5"

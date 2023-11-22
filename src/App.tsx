@@ -28,10 +28,11 @@ const StyledAppWrapper = styled.div`
 
 const StyledMainWrapper = styled.div`
   width: 100%;
-  padding: 0px 15px;
+  padding: 0 15px;
 
   @media (min-width: 768px) {
     width: 768px;
+    padding: 0;
   }
 `;
 
@@ -75,8 +76,6 @@ const App = () => {
       }
     }
   };
-
-  console.log(response);
 
   return (
     <ThemeProvider theme={isDarkTheme ? darkTheme : lightTheme}>
