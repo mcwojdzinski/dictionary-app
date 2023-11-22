@@ -53,10 +53,12 @@ const WordContent = ({
             <div>
               <StyledWordContentHead>{response?.word}</StyledWordContentHead>
               <StyledWordContentPron>
-                {findPhonetics(response.phonetics) ? findPhonetics(response.phonetics)[1] : 'No data'}
+                {findPhonetics(response.phonetics) ? findPhonetics(response.phonetics)![1] : 'No data'}
               </StyledWordContentPron>
             </div>
-            <AudioButton audio={findPhonetics(response.phonetics) ? findPhonetics(response.phonetics)[0] : 'No data'} />
+            <AudioButton
+              audio={findPhonetics(response.phonetics) ? findPhonetics(response!.phonetics)![0] : 'No data'}
+            />
           </StyledWordContentHeaderWrapper>
           {checkForPartOfSpeech('noun') && (
             <>
