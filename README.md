@@ -1,27 +1,31 @@
-# React + TypeScript + Vite
+<h1 align="center">Dictionary application</h4>
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+<p align="center">
+    <img src="https://raw.githubusercontent.com/mcwojdzinski/dictionary-app/main/design/preview.jpg"
+         alt="Screenshot" width="50%">
+  </a>
+</p>
 
-Currently, two official plugins are available:
+## Project Overview 🎉
+Simple react application for making queries to the dictionary api. design was made via https://frontendmentor.io/ which was very helpful throughout of the development
+## Tech/framework used 🔧
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+| Tech                                                    | Description                              |
+| ------------------------------------------------------- | ---------------------------------------- |
+| [React](React)                           | XYZ   |
+| [Typescript](X)                           | XYZ   |
+| [Dictionary API](X)                           | XYZ   |
 
-## Expanding the ESLint configuration
+## Installation 💾
+For the instalation of the project see `package.json` file for packages needed to install the dependecies. To install type `yarn install` inside the project.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Available scripts
 
-- Configure the top-level `parserOptions` property like this:
+| Command                   | Description                   |     |
+| ------------------------- | ----------------------------- | --- |
+| `yarn dev`           | Open local server             |     |
+| `yarn build`           | Create optimized build        |     |
 
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
-```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+## Live 📍
+Here you can check live version of the project: https://dictionary-mcwoj.netlify.app/
