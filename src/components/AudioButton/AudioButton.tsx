@@ -1,5 +1,11 @@
 import { useState } from 'react';
 import IconPlay from '../Icons/IconPlay';
+import styled from 'styled-components';
+
+const Button = styled.button`
+  background-color: transparent;
+  border: none;
+`;
 
 const AudioButton = ({ audio }: { audio: string }) => {
   const [isPlaying, setIsPlaying] = useState(false);
@@ -11,13 +17,13 @@ const AudioButton = ({ audio }: { audio: string }) => {
     } else {
       audioFile.play();
     }
-    setIsPlaying(!isPlaying);
+    setIsPlaying((prev) => !prev);
   };
 
   return (
-    <div onClick={togglePlay}>
+    <Button aria-label="Play ponetic audio" onClick={togglePlay}>
       <IconPlay />
-    </div>
+    </Button>
   );
 };
 

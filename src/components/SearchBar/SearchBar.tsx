@@ -1,5 +1,5 @@
-import IconSearch from '../Icons/IconSearch.tsx';
-import { ErrorMessage, Input, SearchIconWrapper, SearchWrapper } from './SearchBar.styles.tsx';
+import IconSearch from '../Icons/IconSearch';
+import { ErrorMessage, Input, SearchIconWrapper, SearchWrapper } from './SearchBar.styles';
 import { useState } from 'react';
 
 const SearchBar = ({
@@ -8,8 +8,8 @@ const SearchBar = ({
   getResponse,
 }: {
   searchValue: string;
-  setSearchValue: (value: string) => unknown;
-  getResponse: (value: string) => unknown;
+  setSearchValue: (value: string) => void;
+  getResponse: (value: string) => void;
 }) => {
   const [isInputEmpty, setIsInputEmpty] = useState<boolean>(false);
   const handleInputChange = async (event: React.KeyboardEvent<HTMLInputElement>) => {
