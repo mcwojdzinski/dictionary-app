@@ -1,12 +1,6 @@
 import { useState } from 'react';
-import {
-  DropdownItem,
-  DropdownStyle,
-  SelectContainer,
-  SelectIconWrapper,
-  SelectLabelButton,
-} from './Select.styles.tsx';
-import IconArrowDown from '../../Icons/IconArrowDown.tsx';
+import { DropdownItem, DropdownStyle, SelectContainer, SelectIconWrapper, SelectLabelButton } from './Select.styles';
+import IconArrowDown from '../../Icons/IconArrowDown';
 
 const Select = () => {
   const [open, setOpen] = useState<boolean>(false);

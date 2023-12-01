@@ -1,8 +1,8 @@
-import { ErrorResponse } from '../../types.ts';
-import AudioButton from '../AudioButton/AudioButton.tsx';
-import { ErrorContainer } from '../ErrorContainer/ErrorContainer.tsx';
-import { SourceLink } from '../SourceLink/SourceLink.tsx';
-import { WordContentInterface } from './WordContent.interface.ts';
+import { ErrorResponse } from '../../types';
+import AudioButton from '../AudioButton/AudioButton';
+import { ErrorContainer } from '../ErrorContainer/ErrorContainer';
+import { SourceLink } from '../SourceLink/SourceLink';
+import { WordContentInterface } from './WordContent.interface';
 import {
   StyledWordContentHead,
   StyledWordContentPron,
@@ -13,7 +13,7 @@ import {
   StyledListElement,
   StyledList,
   StyledSynonyms,
-} from './WordContent.styles.tsx';
+} from './WordContent.styles';
 
 interface Phonetic {
   audio: string;

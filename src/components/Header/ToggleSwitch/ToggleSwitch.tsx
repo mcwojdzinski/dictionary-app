@@ -1,8 +1,8 @@
-import { Input, Label, Switch } from './ToggleSwitch.styles.tsx';
+import { Input, Label, Switch } from './ToggleSwitch.styles';
 import { useEffect, useState } from 'react';
-import IconMoon from '../../Icons/IconMoon.tsx';
+import IconMoon from '../../Icons/IconMoon';
 
-const ToggleSwitch = ({ toggleTheme, theme }: { toggleTheme: () => unknown; theme: string }) => {
+const ToggleSwitch = ({ toggleTheme, theme }: { toggleTheme: () => void; theme: string }) => {
   const [checked, setChecked] = useState(false);
 
   useEffect(() => {
@@ -10,7 +10,7 @@ const ToggleSwitch = ({ toggleTheme, theme }: { toggleTheme: () => unknown; them
   }, [theme]);
   const changeTheme = () => {
     toggleTheme();
-    setChecked(!checked);
+    setChecked((prev) => !prev);
   };
 
   return (

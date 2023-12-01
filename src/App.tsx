@@ -1,14 +1,14 @@
 import './App.css';
-import { GlobalStyles } from './assets/styles/globalStyles.ts';
+import { GlobalStyles } from './assets/styles/globalStyles';
 import styled, { ThemeProvider } from 'styled-components';
-import { lightTheme, darkTheme } from './assets/styles/theme.ts';
+import { lightTheme, darkTheme } from './assets/styles/theme';
 
 import { Suspense, useEffect, useState } from 'react';
 
-import Header from './components/Header/Header.tsx';
-import SearchBar from './components/SearchBar/SearchBar.tsx';
+import Header from './components/Header/Header';
+import SearchBar from './components/SearchBar/SearchBar';
 import axios from 'axios';
-import WordContent from './components/WordContent/WordContent.tsx';
+import WordContent from './components/WordContent/WordContent';
 
 type Theme = 'dark' | 'light';
 
@@ -40,10 +40,10 @@ const App = () => {
   const userPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
   const [theme, setTheme] = useState<Theme>(userPrefersDark ? 'dark' : 'light');
   const isDarkTheme: boolean = theme === 'dark';
-  const [searchValue, setSearchValue] = useState<string>('');
+  const [searchValue, setSearchValue] = useState('');
 
   const [response, setResponse] = useState();
-  const [responseError, setResponseError] = useState<boolean>(false); // true -  404, false - 200
+  const [responseError, setResponseError] = useState(false); // true -  404, false - 200
 
   useEffect(() => {
     const handleColorSchemeChange = (e: MediaQueryListEvent) => {
@@ -84,11 +84,11 @@ const App = () => {
         <StyledMainWrapper>
           <Header toggleTheme={toggleTheme} theme={theme} />
           <SearchBar searchValue={searchValue} setSearchValue={setSearchValue} getResponse={getResponse} />
-          {response !== null || response !== undefined ? (
+          {response && (
             <Suspense>
               <WordContent response={response} responseError={responseError} responseErrorBody={response} />
             </Suspense>
-          ) : null}
+          )}
         </StyledMainWrapper>
       </StyledAppWrapper>
     </ThemeProvider>
